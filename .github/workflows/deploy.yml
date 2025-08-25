@@ -17,6 +17,9 @@ jobs:
         with:
           node-version: 20
 
+      - name: Set npm registry to public
+        run: npm config set registry https://registry.npmjs.org/
+
       - name: Install dependencies
         run: npm install
 
