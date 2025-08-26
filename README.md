@@ -47,6 +47,13 @@ npx nuxi generate
 docker build -t alenahasslacher/nuxt-dance-challenge:latest .
 ```
 
+### Automatic build & push via GitHub Actions
+- Every push to main automatically builds and pushes the Docker image to Docker Hub.
+
+- Uses GitHub Actions workflow: .github/workflows/docker.yml
+
+- Requires DOCKER_USERNAME and DOCKER_PASSWORD secrets to be set in GitHub repo.
+
 ### Push to Docker Hub
 ```bash 
 docker push alenahasslacher/nuxt-dance-challenge:latest
