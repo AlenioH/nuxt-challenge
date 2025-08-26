@@ -12,9 +12,9 @@ const store = useMovesStore()
     <input
       v-model="store.newMove"
       placeholder="Add a new move"
-      @keyup.enter="store.addMove"
+      @keyup.enter="store.addMove()"
     />
-    <button @click="store.addMove">Add</button>
+    <button @click="store.addMove()">Add</button>
 
     <ul>
       <li v-for="(move, index) in store.moves" :key="index">
