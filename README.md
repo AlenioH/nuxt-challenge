@@ -1,75 +1,70 @@
-# Nuxt Minimal Starter
+# Nuxt Dance Challenge
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple Nuxt 4 application demonstrating frontend development with Pinia state management, automated GitHub Pages deployment, and containerized deployment via Helm.
 
-## Setup
+---
 
-Make sure to install dependencies:
+## 🌟 Features
+- Nuxt 4 + TypeScript
+- Pinia for state management
+- Single page to display and add dance moves
+- Dockerized for container deployment
+- Helm chart for Kubernetes deployment
+- Automated deployment to GitHub Pages via GitHub Actions
 
+---
+
+## ⚡ Installation & Development
+
+### Clone the repo
 ```bash
-# npm
+git clone https://github.com/AlenioH/nuxt-challenge.git
+cd nuxt-challenge
+```
+
+### Install dependencies 
+```bash 
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
+### Run development server
+```bash 
 npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+### Build static site
+```bash 
+npx nuxi generate
 ```
 
-## Production
+## 🚀 GitHub Pages Live Demo
+[https://alenioh.github.io/nuxt-challenge/](https://alenioh.github.io/nuxt-challenge/)
 
-Build the application for production:
+## 🐳 Docker
+### Build Docker image
+```bash 
+docker build -t alenahasslacher/nuxt-dance-challenge:latest .
+```
 
+### Push to Docker Hub
+```bash 
+docker push alenahasslacher/nuxt-dance-challenge:latest
+```
+
+## Helm Deployment
+1. Install the chart: 
+```bash 
+helm install nuxt-app ./helm/nuxt-app
+```
+
+2. Upgrade after changes: 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+helm upgrade nuxt-app ./helm/nuxt-app
 ```
 
-Locally preview production build:
-
+3. Uninstall:
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+helm uninstall nuxt-app
 ```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+Make sure the Docker image in values.yaml is correct!
