@@ -9,9 +9,10 @@ export const useMovesStore = defineStore('moves', {
     moveCount: (state) => state.moves.length
   },
   actions: {
-    addMove() {
-      if (this.newMove.trim() !== '') {
-        this.moves.push(this.newMove.trim())
+    addMove(newMove?: string) {
+      const moveToAdd = newMove ?? this.newMove;
+      if (moveToAdd.trim() !== '') {
+        this.moves.push(moveToAdd.trim())
         this.newMove = ''
       }
     },
